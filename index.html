@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>emi caluculator</title>
+    <style>
+        .emi {
+            width: 630px;
+            height: 390px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            bottom: 0px;
+            right: 0px;
+            margin: auto;
+        }
+
+        body {
+            background-color: #eff0ef;
+            color: #777;
+            font-family: sans-serif;
+        }
+
+        .inputs {
+            width: 60%;
+            float: left;
+            height:390px;
+            background-color: #fff;
+            padding: 8px 25px;
+            box-sizing: border-box;
+        }
+
+        .outputs {
+            width: 40%;
+            float: left;
+            height:390px;
+            background-color: #5f91e2;
+            box-sizing: border-box;
+            padding: 25px;
+        }
+        
+        #emipm,#paidint{
+            width:100%;
+            font-size: 35px;
+            line-height: 100px;
+            color:#fff;
+            padding: 20px 0px 20px 0px;
+            text-align: center;
+            height: 100px;
+        }
+        
+        
+
+        .row {
+            width: 100%;
+            height: auto;
+        }
+
+        .row:after {
+            clear: both;
+            display: block;
+            content: "";
+        }
+
+        table {
+            width: 100%;
+            
+            margin-bottom: 20px;
+            border-collapse: collapse;
+
+        }
+
+        table tr {}
+
+        table tr td {
+            position: relative;
+            padding: 18px 0px;
+            width: 50%;
+        }
+
+        .inputs input {
+            padding: 10px 5% 0;
+            border: none;
+            display: inline-block;
+            background: none;
+            border-radius: 2px;
+            font-size: 16px;
+            font-family: "Open sans";
+            color: #2d7cc6;
+            width: 80%;
+            border-bottom: 1px solid #2d7cc6;
+            text-align: right;
+
+        }
+        
+        .inputs td label {
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+    color: #222;
+        }
+        
+        .slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px !important;
+  border-radius: 5px !important;   
+  background: #d3d3d3 !important;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+    padding:0px !important;
+    border-bottom: 0px !important;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50% !important;
+  background: #4CAF50 !important;
+  cursor: pointer;
+}
+
+        #btn{
+            width:180px;
+            height:50px;
+            background-color: green;
+            font-size: 20px;
+            color:#fff;
+            display: block;
+            margin: auto;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="emi">
+        <div class="row">
+            <div class="inputs">
+                <table>
+
+                    <tr>
+                        <td><label>Loan Amount</label></td>
+                        <td><input type="text" id="pramt" value="0"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                        <div class="slidecontainer">
+  <input type="range" min="100" max="10000000" value="50" class="slider" id="principle">
+</div>
+                        </td>
+                        
+                    </tr>
+
+                    <tr>
+                         <td><label>Loan Period</label></td>
+                        <td><input type="text" id="lpr" value="1"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <div class="slidecontainer">
+  <input type="range" min="1" max="30" value="0" class="slider" id="period">
+</div></td>
+                       
+                    </tr>
+
+                    <tr>
+<td><label>Intrest Rate</label></td>
+                        <td><input type="text" id="irt" value="10"></td>
+  
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                         <div class="slidecontainer">
+  <input type="range" min="10" max="25" value="10" class="slider" id="ir">
+</div>
+                        </td>
+                        
+                    </tr>
+
+                   
+                </table>
+            </div>
+
+            <div class="outputs">
+                <div id="emipm"></div>
+                <div id="paidint"></div>
+            </div>
+        </div>
+    </div>
+    <script src="emicaluculator.js"></script>
+</body>
+
+</html>
